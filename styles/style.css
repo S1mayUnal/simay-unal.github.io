@@ -1,1 +1,114 @@
 
+h1, h2, p {
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: white;
+}
+
+/* Navigasyon Alanı */
+nav ul {
+    text-align: right;
+    background-color: lightgrey;
+}
+
+/* Hiyerarşik Seçici & Yatay Menü (Ödev gereksinimi: nav ul li) */
+nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: 0.3s; 
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/* Hover Efekti (Ödev gereksinimi) */
+nav ul li a:hover {
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 4px;
+}
+
+/* İçerik Kutuları Düzeni */
+.container {
+    display: block;
+    margin-top: 20px;
+}
+
+.content, .sidebar {
+    display: inline-block; /* Yan yana getirmek için */
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 300px;
+}
+
+.content {
+    width: 55%;
+    background-color: #fff4d3; /* Sarımsı ton */
+}
+
+.sidebar {
+    width: 43%;
+    margin-left: 1%;
+    background-color: #e3f2fd; /* Mavimsi ton */
+}
+
+/* Metin Düzenlemeleri (Hiyerarşik Seçici) */
+.content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+}
+
+/* Footer Alanı */
+footer {
+    background-color: lightgrey;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Navigasyon Kapsayıcısı */
+.navbar-container {
+    background-color: lightgrey;
+  border-bottom: 2px solid blue;
+    padding: 10px 20px;
+    /* h1 ve nav öğelerini dikeyde ortalamak için line-height veya vertical-align kullanılır */
+}
+
+
+h1.logo {
+    display: inline-block;
+    width: 45%;         /* Sol tarafın genişliği */
+    margin: 0;
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: left;   /* Yazıyı sola yasla */
+}
+
+/* Navigasyon Alanı Sağ Tarafa */
+nav {
+    display: inline-block;
+    width: 53%;         /* Sağ tarafın genişliği */
+    vertical-align: middle;
+    text-align: right;  /* Linkleri sağa yasla */
+}
+
+.intro-text{
+  padding: 0 10px;
+}
+
+
