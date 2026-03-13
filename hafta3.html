@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Hafta2</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="contact-container">
+    <h2>Detaylı İletişim Formu</h2>
+    <form action="#">
+        <label for="name">Ad Soyad:</label>
+        <input type="text" id="name" name="name" placeholder="Örn: Asaf Karataş" required>
+
+        <label for="email">E-posta Adresi:</label>
+        <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+
+        <label>İletişim Tercihi:</label>
+        <div class="option-group">
+            <input type="radio" id="pref-email" name="preference" value="email">
+            <label for="pref-email" class="inline-label">Bana e-posta ile ulaşın</label><br>
+            <input type="radio" id="pref-phone" name="preference" value="phone">
+            <label for="pref-phone" class="inline-label">Bana telefonla ulaşın</label>
+        </div>
+
+        <label>İlgi Alanları / Yetenekler:</label>
+        <div class="option-group">
+            <input type="checkbox" id="html" name="skill" value="html">
+            <label for="html" class="inline-label">HTML</label><br>
+            <input type="checkbox" id="css" name="skill" value="css">
+            <label for="css" class="inline-label">CSS</label><br>
+            <input type="checkbox" id="algo" name="skill" value="algorithm">
+            <label for="algo" class="inline-label">Algoritma</label>
+        </div>
+
+        <label for="subject">Konu:</label>
+        <select id="subject" name="subject" required>
+            <option value="" disabled selected>Lütfen bir konu seçin...</option>
+            <option value="is-teklifi">İş Teklifi</option>
+            <option value="soru">Soru</option>
+            <option value="geri-bildirim">Geri Bildirim</option>
+        </select>
+
+        <label for="file-upload">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+        <input type="file" id="file-upload" name="user-file">
+
+        <label for="message">Mesajınız:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." required></textarea>
+
+        <div class="button-group">
+            <button type="submit" class="btn-submit">Gönder</button>
+            <button type="reset" class="btn-reset">Temizle</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
