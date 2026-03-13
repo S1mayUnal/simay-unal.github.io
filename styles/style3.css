@@ -1,0 +1,79 @@
+/* İletişim Formuna Özel Stiller */
+.contact-container {
+    width: 600px; /* Gereksinim: 600px [cite: 14] */
+    margin: 40px auto; /* Gereksinim: Ortala [cite: 14] */
+    padding: 30px; /* Gereksinim: İç boşluk [cite: 15] */
+    border: 1px solid #ddd; /* Gereksinim: Kenarlık [cite: 16] */
+    border-radius: 10px; /* Gereksinim: Köşe yuvarlama [cite: 16] */
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.contact-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Tüm giriş elemanlarını kapsayan kural [cite: 17, 22] */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container input[type="file"], /* Dosya yükleme dahil edildi */
+.contact-container select,
+.contact-container textarea {
+    width: 100%; /* Gereksinim: Tam genişlik [cite: 18] */
+    padding: 10px; /* Gereksinim: Ferah durması için [cite: 19] */
+    margin-bottom: 20px; /* Gereksinim: Alt boşluk [cite: 20] */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Gri seçenek kutuları */
+.contact-container .option-group {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #f0f0f0;
+}
+
+.contact-container .inline-label {
+    display: inline-block;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.contact-container input[type="radio"],
+.contact-container input[type="checkbox"] {
+    width: auto;
+    margin-bottom: 10px;
+}
+
+/* Buton Tasarımları [cite: 21] */
+.contact-container .button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-container .btn-submit {
+    flex: 1;
+    background-color: #007bff; /* Mavi */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-container .btn-reset {
+    flex: 1;
+    background-color: #dc3545; /* Kırmızı */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
