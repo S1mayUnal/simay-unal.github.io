@@ -1,0 +1,143 @@
+/* Genel Stil */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    height: 150vh; /* Scroll için [cite: 12] */
+}
+
+/* GÜNCELLENDİ: Sol üstte sabit (fixed) ve Mavi Buton [cite: 9, 31, 39] */
+.nav-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    text-decoration: none;
+    background-color: #007bff; /* Mavi Renk */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer; /* [cite: 13, 40] */
+    transition: 0.3s; /* [cite: 14] */
+  
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+  transform: scale(1.08);
+}
+
+/* GÜNCELLENDİ: Sağ altta sabit (fixed) ve Mavi Yardımcı Menü [cite: 31, 54] */
+.fixed-helper {
+    position: fixed; /* [cite: 9, 39] */
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Mavi Renk */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: help; /* [cite: 40] */
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.fixed-helper:hover {
+    background-color: #0056b3;
+  transform: scale(1.08);
+}
+
+/* DOKUNULMADI: Kart Tasarımı (Relative) [cite: 10, 30, 37] */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.announcement-card {
+    position: relative; 
+    width: 380px;
+    height: 450px;
+    background-color: #e3dffc; 
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.badge {
+    position: absolute;
+    padding: 15px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.badge-left { top: 20px; left: 20px; background-color: #fff4cc; }
+.badge-right { top: 20px; right: 20px; background-color: #e0f2f1; }
+.badge-bottom { 
+    bottom: 30px; 
+    right: 20px; 
+    background-color: #fce4ec; 
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+.card-body {
+    position: relative;
+    z-index: 5;
+    margin-top: 25px;
+}
+
+.card-title { font-size: 24px; color: #1a1a1a; margin-bottom: 20px; }
+.card-text { font-size: 15px; color: #444; line-height: 1.6; }
+
+.location-tag {
+    position: absolute;
+    right: 30px;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.location-tag:hover {
+    transform: scale(1.05);
+}
+
+.bg-circle {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    right: -50px;
+    z-index: 1;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.badge-left,
+.badge-right {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.badge-left:hover,
+.badge-right:hover {
+    transform: scale(1.08);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
