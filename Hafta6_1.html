@@ -4,45 +4,57 @@
     <meta charset="UTF-8">
     <title>Öğrenci Not Hesaplama</title>
     <style>
-        .card { width: 300px; font-family: sans-serif; }
-        input { width: 100%; padding: 8px; margin-bottom: 5px; border: 1px solid #ccc; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #e0e0e0; border: 1px solid #999; cursor: pointer; }
-        .result { background: #eeeeee; padding: 15px; margin-top: 20px; border-radius: 4px; }
-        .name-display { font-weight: bold; font-size: 1.2em; margin-bottom: 10px; }
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; }
+        .form-container { width: 400px; border: 1px solid #ccc; padding: 10px; }
+        input { width: 100%; padding: 10px; margin-bottom: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #eeeeee; border: 1px solid #999; cursor: pointer; font-size: 16px; }
+        #sonucPaneli { background-color: #f0f0f0; margin-top: 20px; padding: 20px; border-radius: 4px; display: none; }
+        .ad-soyad { font-weight: bold; font-size: 1.2em; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <input type="text" id="ad" placeholder="Ad Soyad"> 
-        <input type="number" id="vize" placeholder="Vize Notu"> 
-        <input type="number" id="final" placeholder="Final Notu"> 
-        <button onclick="hesapla()">Hesapla</button> [cite: 10]
 
-        <div id="sonucPaneli" class="result" style="display:none;">
-            <div id="resAd" class="name-display"></div> [cite: 8]
-            <div>Ortalama: <span id="resOrt"></span></div> [cite: 9]
-            <div>Harf Notu: <span id="resHarf"></span></div> [cite: 9]
-            <div>Durum: <span id="resDurum"></span></div> [cite: 9]
-        </div>
+<div class="form-container">
+    <input type="text" id="ad" placeholder="Filiz Akın">
+    <input type="number" id="vize" placeholder="Vize Notu">
+    <input type="number" id="final" placeholder="Final Notu">
+    <button onclick="hesapla()">Hesapla</button>
+
+    <div id="sonucPaneli">
+        <span id="resAd" class="ad-soyad"></span>
+        <div>Ortalama: <span id="resOrt"></span></div>
+        <div>Harf Notu: <span id="resHarf"></span></div>
+        <div>Durum: <span id="resDurum"></span></div>
     </div>
+</div>
 
-    <script>
-        function hesapla() {
-            const ad = document.getElementById('ad').value;
-            const vize = parseFloat(document.getElementById('vize').value);
-            const final = parseFloat(document.getElementById('final').value);
-            const ort = (vize * 0.4) + (final * 0.6); [cite: 2]
+<script>
+function hesapla() {
+    const ad = document.getElementById('ad').value;
+    const vize = parseFloat(document.getElementById('vize').value) || 0;
+    const final = parseFloat(document.getElementById('final').value) || 0;
+    
+    const ortalama = (vize * 0.4) + (final * 0.6); // 
+    
+    let harf = "";
+    if (ortalama >= 90) harf = "AA";
+    else if (ortalama >= 80) harf = "BA";
+    else if (ortalama >= 70) harf = "BB";
+    else if (ortalama >= 60) harf = "CB"; // Örnek ekran görüntüsüne uygun [cite: 9]
+    else if (ortalama >= 50) harf = "CC";
+    else harf = "FF";
 
-            let harf = "FF";
-            if(ort >= 60) harf = "CB"; // Görseldeki örneğe göre [cite: 9]
-            else if(ort >= 50) harf = "CC";
+    const durum = ortalama >= 50 ? "Geçti" : "Kaldı"; // 
 
-            document.getElementById('resAd').innerText = ad;
-            document.getElementById('resOrt').innerText = ort.toFixed(2);
-            document.getElementById('resHarf').innerText = harf;
-            document.getElementById('resDurum').innerText = ort >= 50 ? "Geçti" : "Kaldı"; [cite: 2]
-            document.getElementById('sonucPaneli').style.display = 'block';
-        }
-    </script>
+    document.getElementById('resAd').innerText = ad;
+    document.getElementById('resOrt').innerText = ortalama.toFixed(2);
+    document.getElementById('resHarf').innerText = harf;
+    document.getElementById('resDurum').innerText = durum;
+    
+    // Sonucu görünür yap
+    document.getElementById('sonucPaneli').style.display = 'block';
+}
+</script>
+
 </body>
 </html>
