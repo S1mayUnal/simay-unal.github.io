@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Birim Dönüştürücü</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; }
+        .card { width: 350px; border: 1px solid #eee; border-radius: 8px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { font-size: 24px; margin-bottom: 20px; }
+        label { display: block; margin-top: 10px; margin-bottom: 5px; color: #333; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer; font-weight: bold; }
+        #sonucBox { margin-top: 20px; padding: 15px; background-color: #d4edda; border-radius: 5px; text-align: center; font-weight: bold; color: #155724; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Birim Dönüştürücü</h2>
+    <label>Değer Giriniz</label>
+    <input type="number" id="deger" placeholder="50">
+    
+    <label>Dönüşüm Tipi:</label>
+    <select id="tip">
+        <option value="CtoF">Celsius -> Fahrenheit</option>
+        <option value="MtoK">Metre -> Kilometre</option>
+        <option value="KtoG">Kilogram -> Gram</option>
+    </select>
+    
+    <button onclick="donustur()">Hesapla</button>
+    
+    <div id="sonucBox">
+        Sonuç: <span id="sonucText"></span>
+    </div>
+</div>
+
+<script>
+function donustur() {
+    const val = parseFloat(document.getElementById('deger').value);
+    const tip = document.getElementById('tip').value;
+    let sonuc = 0;
+
+    if (isNaN(val)) {
+        alert("Lütfen bir sayı giriniz.");
+        return;
+    }
+
+    if (tip === "CtoF") {
+        sonuc = (val * 1.8) + 32; // [cite: 22]
+    } else if (tip === "MtoK") {
+        sonuc = val / 1000;
+    } else if (tip === "KtoG") {
+        sonuc = val * 1000; // [cite: 29]
+    }
+
+    document.getElementById('sonucText').innerText = sonuc.toLocaleString('tr-TR');
+    document.getElementById('sonucBox').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
